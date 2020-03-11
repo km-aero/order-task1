@@ -2,12 +2,13 @@ from functions import *
 
 order_list = []
 food_list = []
-order_no = 1
+order_no = 0
 
 while True:
     print('1. Create an order')
     print('2. Display an order')
-    print('3. Exit')
+    print('3. Number of orders')
+    print('4. Exit')
     menu = int(input('Please select a menu number. e.g \'2\'\n'))
 
     if menu == 1:
@@ -21,7 +22,7 @@ while True:
                 food_list.append(food)
 
         # As a user I create different orders(different files)
-        [create_write_file('order' + str(order_no) + '.txt', i + '\n') for i in food_list]
+        [create_write_file('order' + str(order_no+1) + '.txt', i + '\n') for i in food_list]
         order_list.append(food_list)
         food_list = []
         order_no += 1
@@ -35,5 +36,14 @@ while True:
             break
 
     if menu == 3:
+        print('Number of orders:', order_no)
+        input('\n Press enter/return to continue.\n')
+
+    if menu == 4:
         print('Have a great day!')
         break
+
+
+
+
+#TODO add exception handling
