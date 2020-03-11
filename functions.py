@@ -4,9 +4,9 @@ def create_write_file(file_name, order_contents):
         f.write(order_contents)
 
 def read_file(file_name):
-    with open(file_name, 'r') as f:
-        y = f.readlines()
+    with open(file_name, 'r') as file:
+        y = file.readlines()
         x = 1
         for i in y:
-            return x + ' - ' + i.rstrip('\n').title()
+            print(str(x), '-', i.rstrip('\n').title())
             x += 1
